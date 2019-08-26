@@ -5,8 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/Background_Apk"
-        tools:context=".MainActivity">
-
+        tools:context=".RegisterActivity">
 
     <TextView
             android:id="@+id/textView"
@@ -14,13 +13,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="51dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="PetChild"
             android:textColor="@color/Cor_PetChild"
             android:textSize="41dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="51dp"
+            android:layout_marginTop="72dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,63 +50,84 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintGuide_percent="0.46"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-            android:id="@+id/btn_facebook"
+    <EditText
+            android:id="@+id/editTextEmail"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="72dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_button"
-            android:text="LOGIN WITH FACEBOOK"
+            android:hint="EMAIL"
             android:textColor="#FFFF"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btn_login_google"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#FFFF"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-            android:id="@+id/btn_login_google"
+    <EditText
+            android:id="@+id/editTextPassword"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_button"
-            android:text="LOGIN WITH GOOGLE"
+            android:hint="PASSWORD"
             android:textColor="#FFFF"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btn_login_email"
+            android:inputType="textPassword"
+            android:textColorHint="#FFFF"
+            app:layout_constraintBottom_toTopOf="@+id/btn_logInTo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_facebook" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-            android:id="@+id/btn_login_email"
+            android:id="@+id/btn_logInTo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/rounded_button"
+            android:text="LOGIN "
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login_cadastrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <Button
+            android:id="@+id/btn_login_cadastrar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/rounded_button"
-            android:text="LOGIN WITH EMAIL"
+            android:text="CADASTRAR"
             android:textColor="#FFFF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login_google" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_logInTo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

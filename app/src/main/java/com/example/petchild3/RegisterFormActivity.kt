@@ -4,29 +4,36 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_tela__login.*
+import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_register_form.*
 
-class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
-
+class RegisterFormActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela__login)
+        setContentView(R.layout.activity_register_form)
 
         setUpListener()
     }
 
 
+
     private fun setUpListener() {
-        btn_login_email.setOnClickListener(this)
+
+        btn_Cancelar.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when(view){
-            btn_login_email ->{
+            btn_logInTo ->{
+
+            }
+            btn_Cancelar ->{
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
+
             }
+
         }
     }
 }
