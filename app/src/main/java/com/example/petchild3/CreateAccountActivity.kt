@@ -4,20 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 
-import kotlinx.android.synthetic.main.activity_register_form.*
+import kotlinx.android.synthetic.main.activity_create_account.*
 
-class RegisterFormActivity : AppCompatActivity(), View.OnClickListener {
+class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register_form)
+        setContentView(R.layout.activity_create_account)
 
         // Buttons
         setUpListener()

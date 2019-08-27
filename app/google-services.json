@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "852523599745-cmpjipnu5bs7g9mc8iohntn41957tqmb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.petchild3",
+            "certificate_hash": "778a9f47de1c131f2c7ff7f9f148180e1e84b2e4"
+          }
+        },
+        {
           "client_id": "852523599745-lk79kubrdrodgpu98qv1h9vko6nc2n64.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
