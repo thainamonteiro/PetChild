@@ -21,4 +21,7 @@
     <string name="twitter_consumer_key" translatable="false">YOUR_CONSUMER_KEY</string>
     <string name="twitter_consumer_secret" translatable="false">YOUR_CONSUMER_SECRET</string>
     <string name="erro_google_sing_in">Erro ao efetuar login com a conta do google</string>
+    <string name="forgot_your_login_info">Esqueceu suas informações de login</string>
+    <string name="email">Email</string>
+    <string name="reset_senha">EVIAR EMAIL DE RECUPERAÇÃO</string>
 </resources>

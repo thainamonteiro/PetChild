@@ -23,8 +23,12 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela__login)
+
+
         setUpListener()
     }
+
+
 
 
     private fun setUpListener() {
