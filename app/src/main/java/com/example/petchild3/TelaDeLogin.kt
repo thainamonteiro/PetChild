@@ -18,14 +18,78 @@ import kotlinx.android.synthetic.main.activity_tela__login.*
 
 class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
 
+    private var googleApiClient: GoogleApiClient? = null
+    private var fbAuth = FirebaseAuth.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela__login)
-
-
+        initGoogleSignIn()
         setUpListener()
+        btn_login_google.setOnClickListener {
+            signIn()
+
+
+        }
+
+
+    }
+
+    private fun initGoogleSignIn() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        googleApiClient = GoogleApiClient.Builder(this)
+            .enableAutoManage(this) {
+                showErrorSignIn()
+            }
+            .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+            .build()
+    }
+
+    private fun signIn() {
+        val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
+        startActivityForResult(signInIntent, RC_GOOGLE_SIGN_IN)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RC_GOOGLE_SIGN_IN) {
+            val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+            if (result.isSuccess) {
+                val account = result.signInAccount
+                if (account != null) {
+                    firebaseAuthWithGoogle(account)
+                } else {
+                    showErrorSignIn()
+                }
+            } else {
+                showErrorSignIn()
+            }
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
+        fbAuth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    finish()
+                    startActivity(Intent(this, MainActivity::class.java))
+                } else {
+                    showErrorSignIn()
+                }
+            }
+    }
+
+    private fun showErrorSignIn() {
+        Toast.makeText(this, R.string.error_google_sign_in, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        const val RC_GOOGLE_SIGN_IN = 1
     }
 
 
@@ -36,12 +100,14 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        when(view){
-            btn_login_email ->{
+        when (view) {
+            btn_login_email -> {
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
             }
         }
     }
+
+
 
 }

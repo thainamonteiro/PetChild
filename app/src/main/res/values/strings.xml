@@ -24,4 +24,5 @@
     <string name="forgot_your_login_info">Esqueceu suas informações de login</string>
     <string name="email">Email</string>
     <string name="reset_senha">EVIAR EMAIL DE RECUPERAÇÃO</string>
+    <string name="error_google_sign_in">Erro no login</string>
 </resources>
