@@ -34,23 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-    <Button
-            android:id="@+id/btn_facebook"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="76dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/rounded_button"
-            android:text="LOGIN WITH FACEBOOK"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
 
     <Button
             android:id="@+id/btn_login_google"
@@ -60,10 +44,12 @@
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/rounded_button"
+
             android:text="LOGIN WITH GOOGLE"
-            android:textColor="#FFFF"
+            android:textColor="#777777"
             android:textStyle="bold"
+            style="@style/GoogleLoginButton"
+            android:drawableLeft="@drawable/google_logo"
             app:layout_constraintBottom_toTopOf="@+id/btn_login_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -87,5 +73,32 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_login_google" />
+
+
+    <Button
+
+
+            android:id="@+id/btn_facebook"
+            style="@style/FacebookLoginButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="LOGIN WITH FACEBOOK"
+            android:drawableLeft="@drawable/facebook_logo4"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            tools:layout_editor_absoluteX="107dp"
+            tools:layout_editor_absoluteY="628dp"
+
+            />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         package="com.example.petchild3">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
             android:allowBackup="true"
@@ -9,7 +13,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ForgotPasswordActivity"></activity>
+
+        <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +24,11 @@
         </activity>
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".TelaDeLogin"></activity>
+        <activity android:name=".TelaDeLogin" />
         <activity android:name=".MainActivity" />
+
+
+
     </application>
 
 </manifest>

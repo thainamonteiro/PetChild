@@ -8,4 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FacebookLoginButton1">
+        <item name="android:textSize">@dimen/smallTxtSize</item>
+        <item name="android:background">@drawable/facebook_signin_btn</item>
+
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="GoogleLoginButton">
+        <item name="android:textSize">@dimen/smallTxtSize</item>
+        <item name="android:background">@drawable/google_login</item>
+
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!-- Base application theme. -->
+
+
+    <style name="MySuperAppTheme"></style>
+
+    <dimen name="smallTxtSize">20dp</dimen>
 </resources>

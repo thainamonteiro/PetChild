@@ -33,12 +33,17 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setUpListener() {
         btn_login_cadastrar.setOnClickListener(this)
+        tv_forgot_password.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when (view) {
             btn_login_cadastrar -> {
                 val intent = Intent(this, CreateAccountActivity::class.java)
+                startActivity(intent)
+            }
+            tv_forgot_password ->{
+                val intent = Intent(this, ForgotPasswordActivity::class.java)
                 startActivity(intent)
             }
 
