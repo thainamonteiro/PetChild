@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.example.petchild3.Database.DB_Controller
 import com.facebook.CallbackManager
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
@@ -36,7 +37,7 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
         fbAuth = FirebaseAuth.getInstance()
         callbackManager = CallbackManager.Factory.create()
 
-
+        DB_Controller.getPets()
 
         //btn_facebook.setReadPemissions("email")
 
