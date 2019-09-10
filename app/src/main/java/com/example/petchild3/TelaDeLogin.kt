@@ -37,7 +37,6 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
         fbAuth = FirebaseAuth.getInstance()
         callbackManager = CallbackManager.Factory.create()
 
-        DB_Controller.getPets()
 
         //btn_facebook.setReadPemissions("email")
 

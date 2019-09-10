@@ -18,6 +18,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import com.example.petchild3.Database.DB_Controller
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -112,6 +113,9 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
                     currentUserDb.child("firstName").setValue(firstName)
                     currentUserDb.child("lastName").setValue(lastName)
                     updateUserInfoAndUI()
+                    DB_Controller.addUser(email,firstName)
+                    val intent = Intent(this, PetFinder::class.java)
+                    startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)

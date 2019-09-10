@@ -1,10 +1,13 @@
 package com.example.petchild3.Model
 
-class Breed (aggressiviness:Int,behavior:Int,hypoallergenic:Boolean,longevity:Int,name:String,postage:Postage,resume:String) {
-    val Name = name
-    val Aggressiviness = aggressiviness
-    val Behavior = behavior
-    val Hypoallergenic = hypoallergenic
-    val Postage = postage
-    val Resume = resume
-}
+import com.google.firebase.firestore.DocumentReference
+
+data class Breed (
+    val Aggressiviness: Int? = null,
+    val Behavior: Int? = null,
+    val Hypoallergenic: Boolean = false,
+    val Logevity: Int? = null,
+    val Name: String? = null,
+    val Postage: DocumentReference? = null,
+    val Resume: String? = null
+)

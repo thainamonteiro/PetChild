@@ -12,20 +12,26 @@ object DB_Controller {
 
     val db = FirebaseFirestore.getInstance()
 
-    fun getPets(){
+    fun getBreeds(): MutableList<Breed> {
+
+        val breeds = mutableListOf<Breed>()
 
         db.collection("Breed")
             .get()
             .addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
                 if (task.isSuccessful) {
                     for (document in task.result!!) {
-                        //val breed = document.toObject(Breed::class.java)
-                        Log.d(TAG, document.id + " => " + document.data)
+                        val breed = document.toObject(Breed::class.java)
+                        breeds.add(breed)
+                        Log.d(TAG, document.id + " => " + breed)
+                        //Log.d(TAG, document.id + " => " + document.data)
                     }
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.exception)
                 }
             })
+
+        return breeds
     }
 
     fun addUser(login:String, name: String){
