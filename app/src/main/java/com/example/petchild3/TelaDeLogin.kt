@@ -93,11 +93,15 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     finish()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    callActivity()
                 } else {
                     showErrorSignIn()
                 }
             }
+    }
+
+    private fun callActivity() {
+        startActivity(Intent(this, PetFinder::class.java))
     }
 
     private fun showErrorSignIn() {
