@@ -27,4 +27,20 @@ object DB_Controller {
                 }
             })
     }
+
+    fun addUser(login:String, name: String){
+
+        val users = db.collection("Users")
+        val user = hashMapOf(
+            "Name" to name,
+            "Login" to login
+        )
+        users.add(user as Map<String, Any>)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+    }
 }
