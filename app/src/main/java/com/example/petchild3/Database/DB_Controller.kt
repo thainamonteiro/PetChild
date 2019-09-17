@@ -1,37 +1,81 @@
 package com.example.petchild3.Database
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.constraintlayout.widget.Constraints.TAG
+import androidx.lifecycle.MutableLiveData
 import com.example.petchild3.Model.Breed
-import com.google.android.gms.tasks.OnCompleteListener
+import com.example.petchild3.Model.PetViewModel
+import com.example.petchild3.Model.Postage
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
+import java.util.jar.Attributes
 
 
 object DB_Controller {
 
-    val db = FirebaseFirestore.getInstance()
+    @SuppressLint("StaticFieldLeak")
+    private val db = FirebaseFirestore.getInstance()
 
-    fun getBreeds(): MutableList<Breed> {
+    fun getBreeds() {
 
         val breeds = mutableListOf<Breed>()
+        var vmBreeds = MutableLiveData<List<Breed>>()
 
         db.collection("Breed")
             .get()
-            .addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     for (document in task.result!!) {
                         val breed = document.toObject(Breed::class.java)
-                        breeds.add(breed)
                         Log.d(TAG, document.id + " => " + breed)
-                        //Log.d(TAG, document.id + " => " + document.data)
+                        breeds.add(breed)
                     }
+                    vmBreeds.value = breeds
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.exception)
                 }
-            })
+            }
+    }
 
-        return breeds
+    fun getPostages() {
+        val postages = mutableListOf<Postage>()
+        var vmPostage = MutableLiveData<List<Postage>>()
+
+        db.collection("Postage")
+            .get()
+            .addOnCompleteListener { task ->
+                if(task.isSuccessful){
+                    for (document in task.result!!){
+                        val postage = document.toObject(Postage::class.java)
+                        postages.add(postage)
+                        Log.d(TAG,document.id+" => "+postage)
+                    }
+                    vmPostage.value = postages
+                }else{
+                    Log.d(TAG, "Error getting documents: ", task.exception)
+                }
+            }
+    }
+
+    fun getPostageById(id: String?): Postage? {
+        var postage: Postage? = null
+
+        if (id != null) {
+            db.collection("Postage")
+                .document(id)
+                .get()
+                .addOnSuccessListener { document ->
+                    if(document != null){
+                        postage = document.toObject(Postage::class.java)!!
+                        Log.d(TAG, document.id + " => " + postage)
+                    }
+                }
+                .addOnFailureListener{exception ->
+                    Log.w(TAG, "Error writing document", exception)
+                }
+        }
+
+        return postage
     }
 
     fun addUser(login:String, name: String){

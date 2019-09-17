@@ -28,6 +28,10 @@
 
     <!-- Base application theme. -->
 
+    <style name="TextInputOrangeLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#F04F24</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
 
     <style name="MySuperAppTheme"></style>
 

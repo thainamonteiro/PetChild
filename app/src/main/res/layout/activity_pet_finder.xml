@@ -8,26 +8,39 @@
     android:layout_height="match_parent"
     >
 
-    <TextView
-        android:id="@+id/Qualidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="143dp"
-        android:layout_marginEnd="208dp"
-        android:layout_marginRight="208dp"
+    <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Qual a sua idade?"
+            android:theme="@style/TextInputOrangeLayoutStyle"
+            tools:ignore="MissingConstraints">
 
-        android:layout_marginBottom="480dp"
-        android:text="Qual a sua idade?"
-        android:textColor="#241714"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--TextView
+            android:id="@+id/Qualidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="143dp"
+            android:layout_marginEnd="208dp"
+
+            android:layout_marginBottom="480dp"
+            android:text="Onde você mora?"
+            android:textColor="#241714"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.505" />
 
     <TextView
         android:id="@+id/possuideficiaencia"
@@ -47,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/ageEditText"
         android:layout_width="129.03dp"
         android:layout_height="36.56dp"
         android:layout_marginStart="23dp"
@@ -68,7 +81,7 @@
         app:layout_constraintVertical_bias="0.417" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/defSelect"
         android:layout_width="129.03dp"
         android:layout_height="36.56dp"
         android:layout_marginStart="202dp"
@@ -84,24 +97,23 @@
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />-
+        app:layout_constraintVertical_bias="0.431" /-->
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginBottom="576dp"
-        android:text="Ond você Mora?"
-        android:textColor="#241714"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginBottom="576dp"
+            android:text="Qual a sua idade?"
+            android:textColor="#241714"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonCasa"
@@ -167,7 +179,7 @@
         app:layout_constraintVertical_bias="0.505" />
 
     <SeekBar
-        android:id="@+id/seekBarArea"
+        android:id="@+id/areaSeekBar"
         android:layout_width="335dp"
         android:layout_height="41dp"
         android:layout_marginStart="25dp"
@@ -210,7 +222,7 @@
         app:layout_constraintVertical_bias="0.505" />
 
     <SeekBar
-        android:id="@+id/seekBarTime"
+        android:id="@+id/timeSeekBar"
         android:layout_width="335dp"
         android:layout_height="41dp"
         android:layout_marginStart="25dp"
@@ -294,7 +306,7 @@
         app:layout_constraintVertical_bias="0.505" />
 
     <Button
-        android:id="@+id/buttonBuscaPet"
+        android:id="@+id/petSearchButton"
         android:layout_width="357dp"
         android:layout_height="52dp"
         android:layout_marginStart="25dp"
@@ -314,7 +326,7 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/childrenSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="294dp"
@@ -337,7 +349,7 @@
          />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/allergicSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="294dp"
@@ -360,7 +372,7 @@
          />
 
     <Switch
-        android:id="@+id/switch3"
+        android:id="@+id/petsSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="294dp"

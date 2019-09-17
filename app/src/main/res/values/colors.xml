@@ -10,5 +10,6 @@
         <color name="Cor_Perfeito">#FD9124</color>
         <color name="Toggle_Button">#FCE8E3</color>
         <color name="Nome_Raça">#F04F24</color>
+        <color name="mtrl_textinput_default_box_stroke_color">#F04F24</color>
     </resources>
 

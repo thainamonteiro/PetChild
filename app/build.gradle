@@ -41,12 +41,14 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:5.5.0'
     implementation 'com.google.firebase:firebase-database:19.1.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
-    implementation 'com.google.firebase:firebase-firestore:17.1.2'
+    implementation 'com.google.firebase:firebase-firestore:21.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
 
     //implementation project(':internal:chooserx')
     //implementation project(':internal:lintchecks')

@@ -4,10 +4,14 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.constraintlayout.widget.Constraints
+import androidx.lifecycle.ViewModelProviders
 import com.example.petchild3.Database.DB_Controller
+import com.example.petchild3.Model.PetViewModel
 import com.facebook.CallbackManager
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
@@ -37,6 +41,8 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
         fbAuth = FirebaseAuth.getInstance()
         callbackManager = CallbackManager.Factory.create()
 
+        val model = ViewModelProviders.of(this).get(PetViewModel::class.java)
+        val breeds = model.breeds.value?.toList()
 
         //btn_facebook.setReadPemissions("email")
 
