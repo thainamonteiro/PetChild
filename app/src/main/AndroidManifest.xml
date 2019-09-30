@@ -15,19 +15,19 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".UI.ForgotPasswordActivity" />
+        <activity android:name=".UI.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".TelaDeLogin" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".PetFinder"/>
+        <activity android:name=".UI.CreateAccountActivity" />
+        <activity android:name=".UI.RegisterActivity" />
+        <activity android:name=".UI.TelaDeLogin" />
+        <activity android:name=".UI.MainActivity" />
+        <activity android:name=".UI.PetFinder"/>
 
 
 

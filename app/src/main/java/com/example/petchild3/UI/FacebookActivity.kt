@@ -1,7 +1,8 @@
-package com.example.petchild3
+package com.example.petchild3.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.petchild3.R
 
 class FacebookActivity : AppCompatActivity() {
 

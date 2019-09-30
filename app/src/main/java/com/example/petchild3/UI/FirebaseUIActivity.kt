@@ -1,4 +1,4 @@
-package com.example.petchild3
+package com.example.petchild3.UI
 
 import android.app.Activity
 import android.content.Intent
@@ -32,7 +32,8 @@ abstract class FirebaseUIActivity : AppCompatActivity() {
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
                 .build(),
-            RC_SIGN_IN)
+            RC_SIGN_IN
+        )
         // [END auth_fui_create_intent]
     }
 
@@ -88,7 +89,8 @@ abstract class FirebaseUIActivity : AppCompatActivity() {
                 .setLogo(R.drawable.my_great_logo) // Set logo drawable
                 .setTheme(R.style.MySuperAppTheme) // Set theme
                 .build(),
-            RC_SIGN_IN)
+            RC_SIGN_IN
+        )
         // [END auth_fui_theme_logo]
     }
 
@@ -103,7 +105,8 @@ abstract class FirebaseUIActivity : AppCompatActivity() {
                     "https://example.com/terms.html",
                     "https://example.com/privacy.html")
                 .build(),
-            RC_SIGN_IN)
+            RC_SIGN_IN
+        )
         // [END auth_fui_pp_tos]
     }
 

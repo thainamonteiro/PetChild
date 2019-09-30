@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.petchild3.Database.DB_Controller
+import java.util.*
 
 class PetViewModel : ViewModel() {
 
@@ -16,7 +17,7 @@ class PetViewModel : ViewModel() {
         DB_Controller.getPostages()
     }
 
-    val searchParams = MutableLiveData<String>()
+    val searchParams = MutableLiveData<SearchParams>()
 
 
 }

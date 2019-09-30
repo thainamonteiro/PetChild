@@ -1,4 +1,4 @@
-package com.example.petchild3
+package com.example.petchild3.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

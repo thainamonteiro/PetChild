@@ -1,4 +1,4 @@
-package com.example.petchild3
+package com.example.petchild3.UI
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -10,15 +10,12 @@ import com.google.firebase.database.DatabaseReference
 
 import kotlinx.android.synthetic.main.activity_create_account.*
 import com.google.firebase.auth.FirebaseAuth
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.text.TextUtils
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import com.example.petchild3.Database.DB_Controller
+import com.example.petchild3.R
 import com.google.firebase.database.FirebaseDatabase
 
 

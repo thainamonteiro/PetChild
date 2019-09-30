@@ -33,6 +33,7 @@
         <item name="boxStrokeWidth">2dp</item>
     </style>
 
+
     <style name="MySuperAppTheme"></style>
 
     <dimen name="smallTxtSize">20dp</dimen>

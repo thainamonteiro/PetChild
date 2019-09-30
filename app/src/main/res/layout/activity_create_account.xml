@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFFFFF"
-            tools:context=".CreateAccountActivity">
+            tools:context=".UI.CreateAccountActivity">
 
         <ImageView
                 android:id="@+id/imageView4"

@@ -6,393 +6,240 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+        android:padding="16dp"
     >
-
-    <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Qual a sua idade?"
-            android:theme="@style/TextInputOrangeLayoutStyle"
-            tools:ignore="MissingConstraints">
-
-        <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ageEditText"
+            android:layout_height="match_parent">
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                    android:id="@+id/firstLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
 
-    <!--TextView
-            android:id="@+id/Qualidade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="143dp"
-            android:layout_marginEnd="208dp"
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Vamos te ajudar a encontrar o pet perfeito para você"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
-            android:layout_marginBottom="480dp"
-            android:text="Onde você mora?"
-            android:textColor="#241714"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.505" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/possuideficiaencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="202dp"
-        android:layout_marginLeft="202dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
-        android:text="Possui alguma \ndeficiência?"
-        android:textColor="#241714"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                    android:id="@+id/secondLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/firstLinearLayout">
 
-    <Spinner
-        android:id="@+id/ageEditText"
-        android:layout_width="129.03dp"
-        android:layout_height="36.56dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="207dp"
-        android:layout_marginRight="207dp"
-        android:layout_marginBottom="513dp"
+                <TextView
+                        android:id="@+id/possuideficiaencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Possui alguma deficiência?"
+                        android:textSize="16sp"
+                        android:textColor="#241714"
+                        android:textStyle="bold" />
 
-        android:background="@drawable/sw_spinner"
-        android:drawSelectorOnTop="true"
-        android:entries="@array/spinner1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417" />
+                <RadioGroup
+                        android:id="@+id/deficience_RadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkedButton="@+id/no_RadioButton"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
 
-    <Spinner
-        android:id="@+id/defSelect"
-        android:layout_width="129.03dp"
-        android:layout_height="36.56dp"
-        android:layout_marginStart="202dp"
-        android:layout_marginLeft="202dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="513dp"
-        android:background="@drawable/sw_spinner"
-        android:outlineAmbientShadowColor="#F54f"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" /-->
+                    <RadioButton
+                            android:id="@+id/yes_RadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim" />
 
+                    <RadioButton
+                            android:id="@+id/no_RadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="Não" />
+                </RadioGroup>
 
-    <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="47dp"
-            android:layout_marginBottom="576dp"
-            android:text="Qual a sua idade?"
-            android:textColor="#241714"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonCasa"
-        android:layout_width="136.56dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="192dp"
-        android:layout_marginRight="192dp"
-        android:layout_marginBottom="424dp"
-        android:text="Casa"
-        android:textSize="12sp"
-        android:textColor="#ffff"
-        android:background="@drawable/btn_casa_apt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+            <LinearLayout
+                    android:id="@+id/thirdLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/secondLinearLayout">
 
-    <Button
-        android:id="@+id/buttonApt"
-        android:layout_width="136.56dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginLeft="192dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="424dp"
-        android:text="Apartamento"
-        android:textSize="12sp"
-        android:textColor="#F04F24"
-        android:background="@drawable/btn_apt_casa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Onde você Mora?"
+                        android:textSize="16sp"
+                        android:textColor="#241714"
+                        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="238dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:layout_marginBottom="385dp"
-        android:text="Qual a área de criação disponível?"
-        android:textColor="#241714"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+                <RadioGroup
+                        android:id="@+id/home_RadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkedButton="@+id/house_RadioButton"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
 
-    <SeekBar
-        android:id="@+id/areaSeekBar"
-        android:layout_width="335dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:progressBackgroundTint="#FCE8E3"
-        android:progressTint="#F04F24"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="328dp"
-        android:max="10000"
-        android:progress="3000"
-        android:thumb="@drawable/sw_thumb_seek_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <RadioButton
+                            android:id="@+id/house_RadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Casa" />
 
+                    <RadioButton
+                            android:id="@+id/ap_RadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="Apartamento" />
+                </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="334dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="271dp"
-        android:text="Quanto tempo você tem para se dedicar ao  \n seu pet?"
-        android:textColor="#241714"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+            </LinearLayout>
 
-    <SeekBar
-        android:id="@+id/timeSeekBar"
-        android:layout_width="335dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="394dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="214dp"
-        android:max="10000"
-        android:progress="2000"
-        android:progressBackgroundTint="#FA8E75"
-        android:progressTint="#F04F24"
-        android:thumb="@drawable/sw_thumb_seek_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                    android:id="@+id/fourthLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/thirdLinearLayout">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="448dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:layout_marginBottom="173dp"
-        android:text="Possui crianças em casa?"
-        android:textColor="#241714"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="16dp"
+                        android:text="Qual a área de criação disponível (m²)?"
+                        android:textColor="#241714"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="489dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:layout_marginBottom="132dp"
-        android:text="Possui alergias?"
-        android:textColor="#241714"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+                <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/area_SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="530dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:layout_marginBottom="91dp"
-        android:text="Possui outros pets?"
-        android:textColor="#241714"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+                </androidx.appcompat.widget.AppCompatSeekBar>
 
-    <Button
-        android:id="@+id/petSearchButton"
-        android:layout_width="357dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="571dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="21dp"
-        android:background="@drawable/btn_casa_apt"
-        android:text="BUSCAR PET"
-        android:textColor="#ffff"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+            </LinearLayout>
 
-    <Switch
-        android:id="@+id/childrenSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="294dp"
-        android:layout_marginLeft="294dp"
-        android:layout_marginTop="448dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginBottom="173dp"
-        android:background="@drawable/sw_track"
-        android:checked="true"
-        android:textColor="#FFFF"
-        android:textOff="NAO"
-        android:textOn="SIM"
-        android:textStyle="bold"
-        android:thumb="@drawable/sw_thumb"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+            <LinearLayout
+                    android:id="@+id/fifthLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/fourthLinearLayout"
+                    android:padding="16dp">
 
-    <Switch
-        android:id="@+id/allergicSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="294dp"
-        android:layout_marginLeft="294dp"
-        android:layout_marginTop="489dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginBottom="132dp"
-        android:background="@drawable/sw_track"
-        android:textColor="#FFFF"
-        android:textOff="NAO"
-        android:textOn="SIM"
-        android:showText="false"
-        android:textStyle="bold"
-        android:thumb="@drawable/sw_thumb"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quantas horas por dia você tem para se dedicar ao seu pet?"
+                        android:textColor="#241714"
+                        android:paddingBottom="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-    <Switch
-        android:id="@+id/petsSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="294dp"
-        android:layout_marginLeft="294dp"
-        android:layout_marginTop="530dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginBottom="91dp"
-        android:background="@drawable/sw_track"
+                <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/time_SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-        android:textColor="#FFFF"
-        android:textOff="NAO"
-        android:textOn="SIM"
-        android:textStyle="bold"
-        android:thumb="@drawable/sw_thumb"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+                </androidx.appcompat.widget.AppCompatSeekBar>
 
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/sixthLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/fifthLinearLayout">
+
+                <Switch
+                        android:id="@+id/children_Switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:text="Possui crianças em casa?" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/seventhLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/sixthLinearLayout">
+
+                <Switch
+                        android:id="@+id/allergic_Switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:text="Possui alergia?" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/eighthLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/seventhLinearLayout">
+
+                <Switch
+                        android:id="@+id/pets_Switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:text="Possui outros pets?" />
+
+            </LinearLayout>
+
+            <Button
+                    android:id="@+id/submit_Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_casa_apt"
+                    android:text="BUSCAR PET"
+                    android:textColor="#ffff"
+                    android:textSize="16sp"
+                    android:onClick="submit"
+                    android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

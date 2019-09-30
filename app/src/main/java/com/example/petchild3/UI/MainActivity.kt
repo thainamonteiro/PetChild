@@ -1,10 +1,8 @@
-package com.example.petchild3
+package com.example.petchild3.UI
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import kotlinx.android.synthetic.main.activity_tela__login.*
+import com.example.petchild3.R
 
 class MainActivity : AppCompatActivity() {
 
