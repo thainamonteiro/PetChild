@@ -42,11 +42,11 @@ abstract class FirebaseUIActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == RC_SIGN_IN) {
-            val response = IdpResponse.fromResultIntent(data)
+            //val response = IdpResponse.fromResultIntent(data)
 
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
-                val user = FirebaseAuth.getInstance().currentUser
+                //val user = FirebaseAuth.getInstance().currentUser
                 // ...
             } else {
                 // A entrada falhou. Se a resposta for nula, o usuário cancelou o

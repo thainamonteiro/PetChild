@@ -28,6 +28,8 @@
         <activity android:name=".UI.TelaDeLogin" />
         <activity android:name=".UI.MainActivity" />
         <activity android:name=".UI.PetFinder"/>
+        <activity android:name=".UI.PetFinder_Result">
+        </activity>
 
 
 

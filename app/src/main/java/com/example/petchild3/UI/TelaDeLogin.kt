@@ -33,17 +33,10 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
         fbAuth = FirebaseAuth.getInstance()
         callbackManager = CallbackManager.Factory.create()
 
-        val model = ViewModelProviders.of(this).get(PetViewModel::class.java)
-        val breeds = model.breeds.value?.toList()
-
-        //btn_facebook.setReadPemissions("email")
-
         initGoogleSignIn()
         setUpListener()
         btn_login_google.setOnClickListener {
             signIn()
-
-
         }
 
 

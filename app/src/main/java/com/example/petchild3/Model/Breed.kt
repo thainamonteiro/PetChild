@@ -8,4 +8,9 @@ class Breed {
     var Name: String? = null
     var PostageId: String? = null
     var Resume: String? = null
+    var Score: Int? = null
+    var MaxHeight: Int? = null
+    var MaxWeight: Int? = null
+    var MinHeight: Int? = null
+    var MinWeight: Int? = null
 }

@@ -42,7 +42,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                         Toast.makeText(this,message,Toast.LENGTH_LONG).show()
                         updateUI()
                     }else {
-                        Log.w(TAG, it.exception!!.message)
+                        Log.w(TAG, it.exception!!.message!!)
                         Toast.makeText(this, "Nenhum usuário encontrado com este email.", Toast.LENGTH_SHORT).show()
                     }
                 }
