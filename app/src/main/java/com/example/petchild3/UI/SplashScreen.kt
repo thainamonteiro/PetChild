@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.example.petchild3.R
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun chengeToLogin() {
-        val intent = Intent(this, TelaDeLogin::class.java)
+        val intent = Intent(this, LoginOptions::class.java)
         Handler().postDelayed({
             intent.change()
 

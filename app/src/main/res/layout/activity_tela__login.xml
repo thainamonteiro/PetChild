@@ -1,104 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Background_Apk"
-        tools:context=".UI.MainActivity">
+        android:background="#FFFFFF"
+        tools:context=".UI.LoginOptions">
 
-    <ImageView
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="91dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
+            android:layout_gravity="center"
+            android:src="@drawable/logo_color_laranja" />
 
-    <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
-            android:layout_marginLeft="128dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="129dp"
-            android:layout_marginRight="129dp"
-            android:text="PetChild"
-            android:textColor="@color/Cor_PetChild"
-            android:textSize="41sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            android:orientation="vertical">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginWithEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
 
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="16dp"
+                android:onClick="loginWithEmail"
+                android:padding="16dp"
+                android:text="LOGIN WITH EMAIL"
+                android:textStyle="bold"
+                android:theme="@style/Button" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginWithFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
 
-    <Button
-            android:id="@+id/btn_login_google"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
 
-            android:text="LOGIN WITH GOOGLE"
-            android:textColor="#777777"
-            android:textStyle="bold"
-            style="@style/GoogleLoginButton"
-            android:drawableLeft="@drawable/google_logo"
-            app:layout_constraintBottom_toTopOf="@+id/btn_login_email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_facebook" />
-
-    <Button
-            android:id="@+id/btn_login_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/rounded_button"
-            android:text="LOGIN WITH EMAIL"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login_google" />
-
-
-    <Button
-
-
-            android:id="@+id/btn_facebook"
-            style="@style/FacebookLoginButton1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="76dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="LOGIN WITH FACEBOOK"
-            android:drawableLeft="@drawable/facebook_logo4"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11"
-            tools:layout_editor_absoluteX="107dp"
-            tools:layout_editor_absoluteY="628dp"
-
+                android:background="@drawable/com_facebook_button_background"
+                android:padding="16dp"
+                android:text="LOGIN WITH FACEBOOK"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
             />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginWithGogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="loginWithGoogle"
+                android:padding="16dp"
+                android:theme="@style/Button1"
+                android:text="LOGIN WITH GOOGLE"
+                android:textColor="@color/Background_Apk"
+                android:textStyle="bold"
+
+                />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

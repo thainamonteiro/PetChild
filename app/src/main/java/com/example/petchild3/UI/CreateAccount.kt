@@ -19,14 +19,9 @@ import com.example.petchild3.R
 import com.google.firebase.database.FirebaseDatabase
 
 
-class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
+class CreateAccount : AppCompatActivity() {
 
-    private lateinit var mEditTextFirstName: EditText
-    private lateinit var mEditTextLastName: EditText
-    private lateinit var mEditTextFormTelephone: EditText
-    private lateinit var mEditTextFormEmail: EditText
-    private lateinit var mEditTextFormSenha: EditText
-    private lateinit var mEditTextConfirmarSenha: EditText
+
 
     private lateinit var mProgressBar: ProgressDialog
 
@@ -37,7 +32,7 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-    private val TAG = "CreateAccountActivity"
+    private val TAG = "CreateAccount"
 
 
     //global variables
@@ -51,20 +46,6 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_create_account)
 
 
-        initialise()
-        // Buttons
-        setUpListener()
-
-
-    }
-
-    private fun initialise() {
-        mEditTextFirstName = findViewById(R.id.editTextFormFirstName)
-        mEditTextLastName = findViewById(R.id.editTextFormLastName)
-        mEditTextFormTelephone = findViewById(R.id.editTextFormTelephone)
-        mEditTextFormEmail = findViewById(R.id.editTextFormEmail)
-        mEditTextFormSenha = findViewById(R.id.editTextFormSenha)
-        mEditTextConfirmarSenha = findViewById(R.id.editTextConfirmarSenha)
         mProgressBar = ProgressDialog(this)
 
         mDatabase = FirebaseDatabase.getInstance()
@@ -72,16 +53,18 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
         mDataBaseReference = mDatabase.reference.child("Users")
         mAuth = FirebaseAuth.getInstance()
 
-        btnEnviarForm.setOnClickListener {
-            createNewAccount()
-        }
+
     }
 
-    private fun createNewAccount() {
-        firstName = mEditTextFirstName.text.toString()
-        lastName = mEditTextLastName.text.toString()
-        email = mEditTextFormEmail.text.toString()
-        password = mEditTextFormSenha.text.toString()
+    fun exitForm(view:View){
+        val intent = Intent(this, SplashScreen::class.java)
+        startActivity(intent)
+    }
+
+     fun saveForm(view: View) {
+        firstName = etNome.text.toString()
+        email = etEmail.text.toString()
+        password = etSenha.text.toString()
 
         if (!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName)
             && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
@@ -99,7 +82,7 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
                 mProgressBar.hide()
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success")
+                    Log.i(TAG, "createUserWithEmail:success")
                     val userId = mAuth.currentUser!!.uid
                     //Verify Email
                     verifyEmail()
@@ -115,8 +98,8 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
                     startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(this@CreateAccountActivity, "Authentication failed.",
+                    Log.i(TAG, "createUserWithEmail:failure", task.exception)
+                    Toast.makeText(this@CreateAccount, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                 }
             }
@@ -124,7 +107,7 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun updateUserInfoAndUI() {
         //start next activity
-        val intent = Intent(this@CreateAccountActivity, MainActivity::class.java)
+        val intent = Intent(this@CreateAccount, SplashScreen::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
@@ -134,12 +117,12 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
         mUser!!.sendEmailVerification()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this@CreateAccountActivity,
+                    Toast.makeText(this@CreateAccount,
                         "Verification email sent to " + mUser.getEmail(),
                         Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e(TAG, "sendEmailVerification", task.exception)
-                    Toast.makeText(this@CreateAccountActivity,
+                    Toast.makeText(this@CreateAccount,
                         "Failed to send verification email.",
                         Toast.LENGTH_SHORT).show()
                 }
@@ -147,24 +130,9 @@ class CreateAccountActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    private fun setUpListener() {
 
-        btn_Cancelar.setOnClickListener(this)
-        btnEnviarForm.setOnClickListener(this)
-    }
 
-    override fun onClick(view: View?) {
-        when (view) {
-            btnEnviarForm -> {
 
-            }
-            btn_Cancelar -> {
-                val intent = Intent(this, RegisterActivity::class.java)
-                startActivity(intent)
-            }
-
-        }
-    }
 
 
 }

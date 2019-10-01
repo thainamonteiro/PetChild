@@ -19,7 +19,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
             } else {
                 finish()
-                val it = Intent(this, TelaDeLogin::class.java).apply {
+                val it = Intent(this, LoginOptions::class.java).apply {
                     addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 

@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProviders
-import com.example.petchild3.Model.PetViewModel
 import com.example.petchild3.R
 import com.facebook.CallbackManager
 import com.google.android.gms.auth.api.Auth
@@ -17,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_tela__login.*
 
-class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
+class LoginOptions : AppCompatActivity(), View.OnClickListener {
 
     private var googleApiClient: GoogleApiClient? = null
     private lateinit var fbAuth:FirebaseAuth
@@ -35,7 +33,7 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
 
         initGoogleSignIn()
         setUpListener()
-        btn_login_google.setOnClickListener {
+        loginWithGogle.setOnClickListener {
             signIn()
         }
 
@@ -109,13 +107,13 @@ class TelaDeLogin : AppCompatActivity(), View.OnClickListener {
 
 
     private fun setUpListener() {
-        btn_login_email.setOnClickListener(this)
+        loginWithGogle.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when (view) {
-            btn_login_email -> {
-                val intent = Intent(this, RegisterActivity::class.java)
+            loginWithEmail -> {
+                val intent = Intent(this, LoginWithEmail::class.java)
                 startActivity(intent)
             }
         }

@@ -12,8 +12,8 @@ import com.example.petchild3.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_forgot_password.*
 
-class ForgotPasswordActivity : AppCompatActivity() {
-    private val TAG = "ForgotPasswordActivity"
+class ForgotPassword : AppCompatActivity() {
+    private val TAG = "ForgotPassword"
 
     private lateinit var etEmail: EditText
     private lateinit var btnSubmit: Button
@@ -53,7 +53,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        val intent = Intent(this@ForgotPasswordActivity, RegisterActivity::class.java)
+        val intent = Intent(this@ForgotPassword, LoginWithEmail::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
